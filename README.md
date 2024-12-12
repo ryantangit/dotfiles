@@ -6,5 +6,5 @@
 | App | Command |
 | --- | --- | 
 | Kitty | `mv ./kitty ~/.config/kitty` |
-| Tmux | `mv tmux.conf ~/.tmux.conf |
+| Tmux | `mv tmux.conf ~/.tmux.conf` |
 
