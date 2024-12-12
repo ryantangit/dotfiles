@@ -5,5 +5,5 @@
 
 | App | Command |
 | --- | --- | 
-| Kitty | mv ./kitty ~/.config/kitty
+| Kitty | `mv ./kitty ~/.config/kitty`
 
