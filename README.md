@@ -4,17 +4,17 @@
 ---
 
 ## Directory
-| App | Command |
+| App | Location |
 | --- | --- | 
-| Kitty | `mv ./kitty ~/.config/kitty` |
-| Nvim | `mv ./nvim ~/.config/nvim |
-| Tmux | `mv tmux.conf ~/.tmux.conf` |
+| [Kitty](#kitty) | `mv ./kitty ~/.config/kitty` |
+| [Nvim](#nvim) | `mv ./nvim ~/.config/nvim` |
+| [Tmux](#tmux) | `mv tmux.conf ~/.tmux.conf` |
 
 ---
 ---
 
 ### Kitty   
-
+- Installation: `sudo apt install kitty`
 - **Set Up Requires Additional Download**
 - Uses Lilex Nerd Font
 - https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/Lilex.zip
@@ -31,3 +31,7 @@
     - Installation of Lua: `sudo apt install lua5.4 liblua5.4-dev`
     - Installation of LuaRock, package manager for lua: https://luarocks.org/
 
+---
+
+### Tmux
+- Installation: `sudo apt install tmux`
