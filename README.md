@@ -7,6 +7,7 @@
 | App | Command |
 | --- | --- | 
 | Kitty | `mv ./kitty ~/.config/kitty` |
+| Nvim | `mv ./nvim ~/.config/nvim |
 | Tmux | `mv tmux.conf ~/.tmux.conf` |
 
 ---
