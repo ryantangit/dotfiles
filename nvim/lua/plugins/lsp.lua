@@ -20,8 +20,8 @@ return {
         config = function()
 
 
-						-- Make edits here to add additional servers
-            local servers = { "pyright", "ts_ls", "html", "cssls", "jsonls" }
+						-- Make edits here to add additional servers :Mason to see the lists
+            local servers = { "pyright", "ts_ls", "html", "cssls", "jsonls", "gopls" }
 						
             -- Configure Mason
             require("mason").setup()
