@@ -12,4 +12,9 @@ vim.g.mapleader = " "
 -- Enable Mouse because my friend said nvim can't have mouse
 vim.opt.mouse = a
 
+vim.api.nvim_create_autocmd("VimLeave", {
+    pattern = "*",
+    command = "set guicursor=a:ver25"
+})
+
 

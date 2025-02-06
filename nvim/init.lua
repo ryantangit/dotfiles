@@ -6,3 +6,4 @@ require("config.tabs")
 
 -- Setup lazy.nvim
 require("lazy").setup("plugins")
+
