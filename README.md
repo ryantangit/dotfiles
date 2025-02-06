@@ -1,6 +1,6 @@
 # dotfiles
 - Ubuntu 24 LTS
-
+- deploy.sh is destructive, backup if needed.
 ---
 
 ## Directory
