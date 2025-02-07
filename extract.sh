@@ -7,4 +7,4 @@ cp -r ~/.config/kitty/ .
 cp ~/.tmux.conf ./tmux.conf
 
 # Extract Nvim Configs
-cp -r ~/.config/nvim .
+cp -r ~/.config/nvim/ ./
