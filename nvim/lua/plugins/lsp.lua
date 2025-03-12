@@ -19,16 +19,17 @@ return {
         },
         config = function()
 
+
 						-- Make edits here to add additional servers :Mason to see the lists
             local servers = { 
-							"clangd", -- C/C++ 
-							"cssls",  -- CSS
+							"pyright",  -- Python
+							"ts_ls",  --Typescript/Javascript
 							"html",  -- HTML
+							"cssls",  -- CSS
 							"jsonls",  -- JSON
 							"gopls",  -- Golang
-							"pyright",  -- Python
+							"clangd", -- C/C++ 
 							"svelte", -- Svelte	
-							"ts_ls",  --Typescript/Javascript
 						} 
 						
             -- Configure Mason
