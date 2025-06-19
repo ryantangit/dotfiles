@@ -30,6 +30,7 @@ return {
 							"gopls",  -- Golang
 							"clangd", -- C/C++ 
 							"svelte", -- Svelte	
+							"rust_analyzer", -- Rust
 						} 
 						
             -- Configure Mason

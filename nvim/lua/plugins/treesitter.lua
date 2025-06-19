@@ -14,6 +14,7 @@ return {
 					"cpp",
 					"css", 
 					"go",
+					"rust",
 					"html", 
 					"javascript", 
 					"json",
