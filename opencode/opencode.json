@@ -1,5 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "agent": {
+	  "Ask": {
+		  "color": "primary",
+		  "description": "Answer general questions, does not have to be coding specific",
+		  "prompt": "You are an encyclopedia of knowledge. Your goal is to help clarify any misunderstanding the user may have.",
+	  },
+
+  },
   "permission": {
     "edit": "ask",
 		"bash": "ask",
