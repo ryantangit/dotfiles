@@ -1,0 +1,7 @@
+#Global Configuration Options
+
+max-history=5
+sort=-time
+
+# STYLE OPTIONS
+default-timeout=5000

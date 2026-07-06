@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# This is a util that pieces together utils to create a select-a-section screenshot util
+# Using grim, slurp, wl-copy
+# 
+
+mkdir -p $HOME/Pictures/Screenshots
+SC_DIR="$HOME/Pictures/Screenshots"
+SC_FILENAME="$SC_DIR/$(date +%F-%T).png"
+SC_SOUND="/usr/share/sounds/freedesktop/stereo/screen-capture.oga"
+
+SC_DIMENSION=$(slurp)
+
+grim -g "$SC_DIMENSION" "$SC_FILENAME"
+
+wl-copy --type image/png < "$SC_FILENAME"
+
+if [[ -f "$SC_SOUND" ]]; then
+    pw-play "$SC_SOUND" 2>/dev/null &
+fi
+
+notify-send -i "$SC_FILENAME" "$SC_FILENAME captured!"
+
