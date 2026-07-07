@@ -7,21 +7,21 @@
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod4
+    set $mod Mod4
 # Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+    set $left h
+    set $down j
+    set $up k
+    set $right l
 # Your preferred terminal emulator
-set $term ghostty
+    set $term ghostty
 # Your preferred application launcher
-set $menu wofi --show
+    set $menu wofi --show
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+    output * bg /home/birtext/Pictures/Wallpapers/AI_8bit-space-cockpit.png fill
 #
 # Example configuration:
 #
@@ -32,12 +32,12 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 ### Idle configuration
 #
 # Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+# lgtm
+    exec swayidle -w \
+	timeout 300 'swaylock -f -c 000000' \
+        timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+        before-sleep 'swaylock -f -c 000000'
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -201,10 +201,10 @@ bindsym $mod+r mode "resize"
 
 # Audio
     # Special keys to adjust volume via WirePlumber
-    bindsym --locked XF86AudioMute exec wpctl set-mute \@DEFAULT_SINK@ toggle # Toggle Mute 
-    bindsym --locked XF86AudioLowerVolume exec wpctl set-volume \@DEFAULT_SINK@ 5%- -l 1.0 # Go down 5% volume
-    bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume \@DEFAULT_SINK@ 5%+ -l 1.25 # Go up 5% volume
-    bindsym --locked XF86AudioMicMute exec wpctl set-mute \@DEFAULT_SOURCE@ toggle #Toggle source / Mic
+    bindsym --locked XF86AudioMute exec sh -c "wpctl set-mute \@DEFAULT_SINK@ toggle; pw-play /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga" # Toggle Mute
+    bindsym --locked XF86AudioLowerVolume exec sh -c "wpctl set-volume \@DEFAULT_SINK@ 5%- -l 1.0; pw-play /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga" #" Go down 5% volume
+    bindsym --locked XF86AudioRaiseVolume exec sh -c "wpctl set-volume \@DEFAULT_SINK@ 5%+ -l 1.25;pw-play /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga" # Go up 5% volume
+    bindsym --locked XF86AudioMicMute exec wpctl set-mute \@DEFAULT_SOURCE@ toggle; #Toggle source / Mic
 
     # Special keys to control media via playerctl
     bindsym --locked XF86AudioPlay exec playerctl play-pause
@@ -226,9 +226,9 @@ bindsym $mod+r mode "resize"
     # Battery notification
     exec batsignal -b -w 15
 
-# Bar config 
+# Bar config
 bar {
     swaybar_command waybar
 }
 
-include /etc/sway/config.d/*
+# include /etc/sway/config.d/*

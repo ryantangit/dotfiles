@@ -1,3 +1,3 @@
 # DOTFILES
 
-For desktop gardening. Symlinks to install.
+For desktop gardening. Using `stow` to install.
