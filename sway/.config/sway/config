@@ -34,7 +34,7 @@
 # Example configuration:
 # lgtm
     exec swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
+	timeout 1200 'swaylock -f -c 000000' \
         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
         before-sleep 'swaylock -f -c 000000'
 
@@ -213,6 +213,9 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioNext exec playerctl next
     bindsym --locked XF86AudioStop exec playerctl stop
 
+# Bluetooth Applet for Blueman - if bluetooth ui isn't correct pkill -f blueman-applet; blueman-applet & blueman-manager
+ exec blueman-applet
+
 # Brightness
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -231,4 +234,6 @@ bar {
     swaybar_command waybar
 }
 
+# Let da X11 apps (older protocol) run on wayland 
+xwayland enable
 # include /etc/sway/config.d/*
