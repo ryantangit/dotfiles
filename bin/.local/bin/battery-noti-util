@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Battery sound notification utility in tandem with batsignal's -M command
+
+message=$1
+bat_level=$2
+
+# sound profiles
+discharge_sound='/usr/share/sounds/Enchanted/stereo/device-removed.ogg'
+charge_sound='/usr/share/sounds/Enchanted/stereo/device-added.ogg'
+noti_sound='/usr/share/sounds/Enchanted/stereo/battery-low.ogg'
+
+if [[ "$message" == *discharg* ]]; then
+    noti_sound=$discharge_sound 
+elif [[ "$message" == *charg* ]]; then
+    noti_sound=$charge_sound
+fi
+
+
+#
+# notify-send \
+#     -a $app_name \
+#     -t $expire_time \
+#     "Battery:$bat_level%, $message" 
+
+pw-play $noti_sound &2>/dev/null

@@ -214,7 +214,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioStop exec playerctl stop
 
 # Bluetooth Applet for Blueman - if bluetooth ui isn't correct pkill -f blueman-applet; blueman-applet & blueman-manager
- exec blueman-applet
+    exec blueman-applet
 
 # Brightness
     # Special keys to adjust brightness via brightnessctl
@@ -226,8 +226,8 @@ bindsym $mod+r mode "resize"
     bindsym Print exec /home/birtext/.local/bin/screenshot-util
 
 # Notification
-    # Battery notification
-    exec batsignal -b -w 15
+    # Battery notification - config'd in /dotfiles/batsignal
+    exec batsignal
 
 # Bar config
 bar {
@@ -235,7 +235,7 @@ bar {
 }
 
 # Let da X11 apps (older protocol) run on wayland 
-xwayland enable
+    xwayland enable
 
 
 include /etc/sway/config.d/*

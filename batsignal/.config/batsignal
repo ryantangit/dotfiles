@@ -1,0 +1,32 @@
+# From the man page: 
+# batsignal  is a lightweight battery daemon written in C that notifies the user about battery states.
+
+# Run in the background
+-b
+
+# polling per 2 seconds - had to so that it registers when plugged vs not
+-m
+1
+### Battery Level Warnings
+
+# Warning - Should prob plug it in.
+-w
+20 
+-W
+Level: warning, I should prob plug it in.
+# Critical - Should def plug it in.
+-c
+10
+-C
+Level: critical, I should def plug it in.
+###
+
+# Show Message when battery is discharging/charging
+-p
+-P
+Battery is now charging!
+-U
+Battery is now discharging!
+
+-M
+/home/birtext/.local/bin/battery-noti-util "%s" "%s"
