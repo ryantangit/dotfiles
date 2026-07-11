@@ -237,5 +237,8 @@ bar {
 # Let da X11 apps (older protocol) run on wayland 
     xwayland enable
 
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
 
 include /etc/sway/config.d/*

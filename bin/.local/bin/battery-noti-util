@@ -2,8 +2,8 @@
 
 # Battery sound notification utility in tandem with batsignal's -M command
 
-message=$1
-bat_level=$2
+message="$1"
+bat_level="$2"
 
 # sound profiles
 discharge_sound='/usr/share/sounds/Enchanted/stereo/device-removed.ogg'
@@ -17,7 +17,7 @@ elif [[ "$message" == *charg* ]]; then
 fi
 
 
-#
+# Commented out because it actually ends up double sending.
 # notify-send \
 #     -a $app_name \
 #     -t $expire_time \
