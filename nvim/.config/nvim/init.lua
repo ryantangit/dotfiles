@@ -1,2 +1,2 @@
-vim.opt.shiftwidth=4
-
+require("settings")
+require("lsp")
