@@ -21,8 +21,13 @@
         "mpd",
         "pulseaudio",
 	"bluetooth",
-        "network",
+        "network"
     ],
+    "sway/workspaces": {
+	"format": "<span size='larger'>{name}</span>",
+	"window-rewrite-default": "{name}" 
+
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },

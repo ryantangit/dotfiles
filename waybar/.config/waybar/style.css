@@ -4,3 +4,7 @@
     font-size: 13px;
     margin: 1px;
 }
+
+#workspaces button.focused {
+    background-color: #f5b916;
+}
