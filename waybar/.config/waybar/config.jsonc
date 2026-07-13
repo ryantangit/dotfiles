@@ -2,9 +2,9 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 40, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": "10px", // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
@@ -13,12 +13,11 @@
         "custom/media"
     ],
     "modules-center": [
-        "clock",
-        "battery",
-	"power-profiles-daemon"
+        "clock"
     ],
     "modules-right": [
-        "mpd",
+	"battery",
+	"power-profiles-daemon",
         "pulseaudio",
 	"bluetooth",
         "network"
@@ -38,36 +37,18 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
     "clock": {
         // "timezone": "America/New_York",
+	"calendar": {
+	    "mode": "year",
+	    "mode-mon-col": 3,
+	    "format": {
+		"today": "<span color='#ff4d4d'><b><u>{}</u></b></span>"
+	    }
+	},
+	"format": " <span size='larger'>{:%Y-%m-%d %H:%M}</span> ",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": " <span size='larger'>{:%H:%M}</span> "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -88,24 +69,28 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󰃨",
-        "format-plugged": "{capacity}% ",
+        "format": " <span size='larger'>{capacity}% {icon}</span> ",
+        "format-charging": " <span size='larger'>{capacity}% </span> ",
+        "format-plugged": " <span size='larger'>{capacity}% </span> ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+	    "<span foreground='#F53927'></span>", 
+	    "<span foreground='#F58B27'></span>", 
+	    "<span foreground='#F5BB27'></span>",
+	    "<span foreground='#B7F527'></span>",
+	    "<span foreground='#27F538'></span>"]
     },
     "bluetooth":{
-	"format": "",
+	"format": "<span size='larger'>  </span>",
 	"format-disabled": "",
 	"on-click": "gtk-launch blueman-manager"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-wifi": "<span size='larger'></span>",
+        "format-ethernet": "{ipaddr}/{cidr}",
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
         "format-linked": "{ifname} (No IP) 󰊗",
         "format-disconnected": "Disconnected ⚠",
@@ -113,10 +98,10 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}% {format_source}",
+        "format": " <span size='larger'>{icon} {volume}% </span>",
 	"format-source": "{volume}% ",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "󰅶 {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} ",
+        "format-bluetooth-muted": "󰅶 {icon} ",
         "format-muted": "󰅶 {format_source}",
         "format-icons": {
             "headphone": "",
@@ -133,21 +118,9 @@
 	  "tooltip": true,
 	  "format-icons": {
 	    "default": "",
-	    "performance": "",
-	    "balanced": "",
-	    "power-saver": ""
+	    "performance": " <span size='larger' foreground='#F5BB27'></span> ",
+	    "balanced": " <span size='larger' foreground='#2757F5'></span> ",
+	    "power-saver": " <span size='larger' foreground='#B7F527'></span> "
 	  }
     },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
 }

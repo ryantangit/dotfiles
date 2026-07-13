@@ -6,7 +6,7 @@ message="$1"
 bat_level="$2"
 
 # sound profiles
-discharge_sound='/usr/share/sounds/Enchanted/stereo/device-removed.ogg'
+discharge_sound='/usr/share/sounds/Enchanted/stereo/device-added.ogg'
 charge_sound='/usr/share/sounds/Enchanted/stereo/device-added.ogg'
 noti_sound='/usr/share/sounds/Enchanted/stereo/battery-low.ogg'
 
